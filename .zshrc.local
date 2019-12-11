@@ -1,0 +1,17 @@
+# pacman -S bat lsd fzf zsh-theme-powerlevel9k zsh-syntax-highlighting powerline-fonts vim-plug
+
+export BAT_THEME="ansi-dark"
+export BAT_STYLE="full"
+
+source /usr/share/fzf/key-bindings.zsh
+source /usr/share/fzf/completion.zsh
+export FZF_DEFAULT_OPTS="--preview 'bat {} --color=always'"
+
+source /usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+
+source /usr/share/zsh-theme-powerlevel9k/powerlevel9k.zsh-theme
+export ZSH_THEME="powerlevel9k/powerlevel9k"
+export POWERLEVEL9K_PROMPT_ON_NEWLINE=true
+export POWERLEVEL9K_PROMPT_ADD_NEWLINE=true
+unalias lsd
+alias ls=lsd
