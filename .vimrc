@@ -6,24 +6,27 @@ set nocompatible
 set smartindent
 set hlsearch
 set colorcolumn=80
-colorscheme solarized
+set textwidth=80
+set scrolloff=3
+set incsearch
 set guioptions-=T
 set guioptions-=r
 set guioptions-=L
 set bg=dark
+set number
+set lazyredraw " makes vsplit scolling faster
 
 exec "set listchars=tab:\uBB\uBB,trail:\uB7,nbsp:~"
 set list
 
+autocmd BufWritePre * %s/\s\+$//e " clear trailling spaces
 autocmd FileType perl set makeprg=perl\ -c\ %\ $*
 
 call plug#begin('~/.vim/plugged')
-Plug 'altercation/vim-colors-solarized'
+Plug 'lifepillar/vim-solarized8'
 Plug 'majutsushi/tagbar'
 Plug 'scrooloose/nerdtree'
 Plug 'jistr/vim-nerdtree-tabs'
-Plug 'vim-scripts/L9'
-Plug 'vim-scripts/FuzzyFinder'
 Plug 'Shougo/neocomplete.vim'
 Plug 'vim-airline/vim-airline'
 Plug 'dense-analysis/ale'
@@ -32,9 +35,17 @@ Plug 'airblade/vim-gitgutter'
 Plug 'tpope/vim-fugitive'
 call plug#end()
 
+let g:solarized_termcolors=256
+set t_Co=256
+set termguicolors
+colorscheme solarized8
+
 set statusline+=%#warningmsg#
 set statusline+=%{SyntasticStatuslineFlag()}
 set statusline+=%*
+
+set ttimeoutlen=10
+set updatetime=100
 
 " Airline always visible
 set laststatus=2
@@ -64,7 +75,6 @@ noremap <F3> :TagbarToggle <CR>
 noremap <F1> :NERDTreeTabsToggle <CR>
 noremap <C-p> :tabprevious <CR>
 noremap <C-n> :tabnext <CR>
-map <leader>ff :FufCoverageFile<CR>
 
 set tags=./.git/tags,./tags
 let g:tagbar_type_perl = {
@@ -83,5 +93,3 @@ let g:tagbar_type_perl = {
         \ 'd:POD:1:0'
     \ ]
 \ }
-
-set updatetime=100
