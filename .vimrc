@@ -6,11 +6,11 @@ set nocompatible
 set smartindent
 set hlsearch
 set colorcolumn=80
-colorscheme solarized
 set guioptions-=T
 set guioptions-=r
 set guioptions-=L
 set bg=dark
+set termguicolors
 
 exec "set listchars=tab:\uBB\uBB,trail:\uB7,nbsp:~"
 set list
@@ -18,7 +18,7 @@ set list
 autocmd FileType perl set makeprg=perl\ -c\ %\ $*
 
 call plug#begin('~/.vim/plugged')
-Plug 'altercation/vim-colors-solarized'
+Plug 'lifepillar/vim-solarized8'
 Plug 'majutsushi/tagbar'
 Plug 'scrooloose/nerdtree'
 Plug 'jistr/vim-nerdtree-tabs'
@@ -35,6 +35,8 @@ call plug#end()
 set statusline+=%#warningmsg#
 set statusline+=%{SyntasticStatuslineFlag()}
 set statusline+=%*
+
+colorscheme solarized8
 
 " Airline always visible
 set laststatus=2
