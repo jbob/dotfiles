@@ -1,4 +1,5 @@
-# pacman -S bat lsd fzf zsh-theme-powerlevel9k zsh-syntax-highlighting powerline-fonts vim-plug
+# pacman -S bat lsd fzf zsh-theme-powerlevel9k zsh-syntax-highlighting powerline-fonts
+# trizen vim-plug
 # wget https://github.com/ryanoasis/nerd-fonts/releases/download/v2.0.0/DejaVuSansMono.zip
 
 source ~/perl5/perlbrew/etc/bashrc
@@ -23,3 +24,4 @@ source /usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zs
 
 unalias lsd
 alias ls=lsd
+alias vi=vim
