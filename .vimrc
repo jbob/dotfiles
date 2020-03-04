@@ -4,8 +4,10 @@ set shiftwidth=4
 set tabstop=4
 set nocompatible
 set smartindent
-set hlsearch
+set hlsearch " highlight search results
+set incsearch " search while typing
 set colorcolumn=80
+set scrolloff=3
 colorscheme solarized
 set guioptions-=T
 set guioptions-=r
