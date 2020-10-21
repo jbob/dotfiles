@@ -21,6 +21,7 @@ set list
 
 autocmd BufWritePre * %s/\s\+$//e " clear trailling spaces
 autocmd FileType perl set makeprg=perl\ -c\ %\ $*
+autocmd FileType perl setlocal equalprg=perltidy\ -st
 
 call plug#begin('~/.vim/plugged')
 Plug 'lifepillar/vim-solarized8'
