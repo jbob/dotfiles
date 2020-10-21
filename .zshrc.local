@@ -11,8 +11,6 @@ source /usr/share/fzf/key-bindings.zsh
 source /usr/share/fzf/completion.zsh
 export FZF_DEFAULT_OPTS="--height 90% --preview 'bat {} --color=always'"
 
-# To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
-[[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
 
 #export POWERLEVEL9K_MODE='awesome-fontconfig'
 #export POWERLEVEL9K_RIGHT_PROMPT_ELEMENTS=(status time)
@@ -21,9 +19,11 @@ export FZF_DEFAULT_OPTS="--height 90% --preview 'bat {} --color=always'"
 #export POWERLEVEL9K_TIME_FORMAT="%D{%H:%M:%S | %d.%m.%y}"
 #export POWERLEVEL9K_PROMPT_ADD_NEWLINE=true
 #export ZSH_THEME="powerlevel10k/powerlevel10k"
-#source /usr/share/zsh-theme-powerlevel10k/powerlevel10k.zsh-theme
-#
-#source /usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+source /usr/share/zsh-theme-powerlevel10k/powerlevel10k.zsh-theme
+# To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
+[[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
+
+source /usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 
 unalias lsd
 alias ls=lsd
