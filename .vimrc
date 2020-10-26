@@ -19,6 +19,8 @@ set lazyredraw " makes vsplit scolling faster
 exec "set listchars=tab:\uBB\uBB,trail:\uB7,nbsp:~"
 set list
 
+let g:xml_syntax_folding=1
+autocmd FileType xml setlocal foldmethod=syntax
 autocmd BufWritePre * %s/\s\+$//e " clear trailling spaces
 autocmd FileType perl set makeprg=perl\ -c\ %\ $*
 autocmd FileType perl setlocal equalprg=perltidy\ -st
@@ -78,8 +80,10 @@ inoremap <expr><BS> deoplete#smart_close_popup()."\<C-h>"
 
 noremap <F3> :TagbarToggle <CR>
 noremap <F1> :NERDTreeTabsToggle <CR>
-noremap <C-p> :tabprevious <CR>
-noremap <C-n> :tabnext <CR>
+"Control space
+noremap <C-@> :FZF <CR>
+noremap <C-p> :bp <CR>
+noremap <C-n> :bn <CR>
 
 set tags=./.git/tags,./tags
 let g:tagbar_type_perl = {
