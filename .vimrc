@@ -26,7 +26,8 @@ autocmd FileType perl set makeprg=perl\ -c\ %\ $*
 autocmd FileType perl setlocal equalprg=perltidy\ -st
 
 call plug#begin('~/.vim/plugged')
-Plug 'lifepillar/vim-solarized8'
+"Plug 'lifepillar/vim-solarized8'
+Plug 'morhetz/gruvbox'
 Plug 'majutsushi/tagbar'
 Plug 'scrooloose/nerdtree'
 Plug 'jistr/vim-nerdtree-tabs'
@@ -45,7 +46,7 @@ call plug#end()
 let g:solarized_termcolors=256
 set t_Co=256
 set termguicolors
-colorscheme solarized8
+colorscheme gruvbox
 
 set statusline+=%#warningmsg#
 set statusline+=%{SyntasticStatuslineFlag()}
