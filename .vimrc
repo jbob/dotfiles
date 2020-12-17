@@ -26,12 +26,10 @@ autocmd FileType perl set makeprg=perl\ -c\ %\ $*
 autocmd FileType perl setlocal equalprg=perltidy\ -st
 
 call plug#begin('~/.vim/plugged')
-"Plug 'lifepillar/vim-solarized8'
 Plug 'morhetz/gruvbox'
 Plug 'majutsushi/tagbar'
 Plug 'scrooloose/nerdtree'
 Plug 'jistr/vim-nerdtree-tabs'
-"Plug 'Shougo/neocomplete.vim'
 Plug 'Shougo/deoplete.nvim'
 Plug 'roxma/nvim-yarp'
 Plug 'roxma/vim-hug-neovim-rpc'
@@ -43,8 +41,8 @@ Plug 'airblade/vim-gitgutter'
 Plug 'tpope/vim-fugitive'
 call plug#end()
 
-let g:solarized_termcolors=256
-set t_Co=256
+let &t_8f = "\<Esc>[38:2:%lu:%lu:%lum"
+let &t_8b = "\<Esc>[48:2:%lu:%lu:%lum"
 set termguicolors
 colorscheme gruvbox
 
