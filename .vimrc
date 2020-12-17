@@ -59,7 +59,7 @@ set updatetime=100
 set laststatus=2
 let g:airline_powerline_fonts = 1
 
-let b:ale_linters = {'perl': ['perl', 'perlcritic']}
+let b:ale_linters = {'perl': ['perl', 'perlcritic'], 'javascript': ['standard']}
 let b:ale_fixers = {'perl': ['perltidy']}
 
 let g:deoplete#enable_at_startup = 1
