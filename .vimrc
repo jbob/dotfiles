@@ -39,7 +39,10 @@ Plug 'dense-analysis/ale'
 Plug 'junegunn/fzf'
 Plug 'airblade/vim-gitgutter'
 Plug 'tpope/vim-fugitive'
+Plug 'rhysd/git-messenger.vim'
 call plug#end()
+
+let mapleader = ","
 
 let &t_8f = "\<Esc>[38:2:%lu:%lu:%lum"
 let &t_8b = "\<Esc>[48:2:%lu:%lu:%lum"
@@ -59,6 +62,8 @@ let g:airline_powerline_fonts = 1
 
 let b:ale_linters = {'perl': ['perl', 'perlcritic'], 'javascript': ['standard']}
 let b:ale_fixers = {'perl': ['perltidy']}
+
+let g:git_messenger_close_on_cursor_moved = 0
 
 let g:deoplete#enable_at_startup = 1
 " Recommended key-mappings.
