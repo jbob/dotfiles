@@ -1,29 +1,31 @@
 syntax on
 set expandtab
-set shiftwidth=4
-set tabstop=4
+set shiftwidth=2
+set tabstop=2
 set nocompatible
 set smartindent
 set hlsearch " highlight search results
 set incsearch " search while typing
-set colorcolumn=80
-set textwidth=80
+set colorcolumn=120
+set textwidth=120
 set scrolloff=3
 set guioptions-=T
 set guioptions-=r
 set guioptions-=L
 set bg=dark
-set number
+set number relativenumber
 set lazyredraw " makes vsplit scolling faster
 
 exec "set listchars=tab:\uBB\uBB,trail:\uB7,nbsp:~"
 set list
 
-let g:xml_syntax_folding=1
-autocmd FileType xml setlocal foldmethod=syntax
+"let g:xml_syntax_folding=1
+"autocmd FileType xml setlocal foldmethod=syntax
 autocmd BufWritePre * %s/\s\+$//e " clear trailling spaces
 autocmd FileType perl set makeprg=perl\ -c\ %\ $*
 autocmd FileType perl setlocal equalprg=perltidy\ -st
+
+"autocmd FileType perl setlocal foldmethod=indent
 
 call plug#begin('~/.vim/plugged')
 Plug 'morhetz/gruvbox'
@@ -33,7 +35,7 @@ Plug 'jistr/vim-nerdtree-tabs'
 Plug 'Shougo/deoplete.nvim'
 Plug 'roxma/nvim-yarp'
 Plug 'roxma/vim-hug-neovim-rpc'
-"Also: pip3 install pynvim
+"Also: pip3 install pynvim or pacman -S python-pynvim
 Plug 'vim-airline/vim-airline'
 Plug 'dense-analysis/ale'
 Plug 'junegunn/fzf'

@@ -4,7 +4,7 @@
 
 source ~/perl5/perlbrew/etc/bashrc
 
-export BAT_THEME="ansi-dark"
+export BAT_THEME="gruvbox-dark"
 export BAT_STYLE="full"
 
 source /usr/share/fzf/key-bindings.zsh
@@ -25,6 +25,9 @@ source /usr/share/zsh-theme-powerlevel10k/powerlevel10k.zsh-theme
 
 source /usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 
-unalias lsd
 alias ls=lsd
-alias vi=vim
+alias vi=lvim
+alias vim=lvim
+unalias lsd 2>/dev/null
+export PATH=/home/markus/.local/bin:$PATH
+export PERL5LIB=/home/markus/work/git/efs-lib/lib/
