@@ -9,7 +9,6 @@ lvim.keys.normal_mode["<S-h>"] = ":bprevious<CR>"
 
 lvim.plugins = {
     { "ishan9299/nvim-solarized-lua" },
-    { "jbob/vim-perltidy" },
     {
         "f-person/git-blame.nvim",
         event = "BufRead",
