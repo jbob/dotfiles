@@ -32,7 +32,7 @@ vim.opt.lazyredraw = true
 
 local capabilities = vim.lsp.protocol.make_client_capabilities()
 local cmd = {
-    '/home/markus/work/gitlab-code-suggestions-language-server-experiment',
+    '$HOME/work/gitlab-code-suggestions-language-server-experiment',
     'serve',
     '--name',
     'gitlab-code-suggestions-language-server-experiment',
