@@ -29,5 +29,5 @@ alias ls=lsd
 alias vi=lvim
 alias vim=lvim
 unalias lsd 2>/dev/null
-export PATH=/home/markus/.local/bin:$PATH
-export PERL5LIB=/home/markus/work/git/efs-lib/lib/
+export PATH=$HOME/.local/bin:$PATH
+export PERL5LIB=$HOME/work/git/efs-lib/lib/
