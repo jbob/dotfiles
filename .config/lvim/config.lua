@@ -15,7 +15,8 @@ lvim.plugins = {
         config = function()
             vim.cmd 'highlight default link gitblame SpecialComment'
         end
-    }
+    },
+    { "git@gitlab.com:gitlab-org/editor-extensions/gitlab.vim.git" }
 }
 
 lvim.colorscheme = "solarized"
@@ -29,39 +30,6 @@ vim.opt.smartindent = true
 vim.opt.scrolloff = 3
 vim.opt.lazyredraw = true
 
-local capabilities = vim.lsp.protocol.make_client_capabilities()
-local cmd = {
-    'gitlab-code-suggestions-language-server-experiment',
-    'serve',
-    '--name',
-    'gitlab-code-suggestions-language-server-experiment',
-    '--srcdir',
-    vim.fn.getcwd(),
-    '--timeout-seconds',
-    '20'
-}
-
-local configs = require 'lspconfig.configs'
-local util = require 'lspconfig.util'
-
-if not configs.gitlab_ai_code_suggestions then
-    configs.gitlab_ai_code_suggestions = {
-        default_config = {
-            cmd = cmd,
-            -- the files fro which the language server is going to be activated
-            filetypes = { 'python', 'ruby', 'perl', 'javascript' },
-            root_dir = function(fname)
-                return util.find_git_ancestor(fname)
-            end,
-            single_file_support = true,
-            settings = {},
-        },
-    }
-end
-
-configs.gitlab_ai_code_suggestions.setup {
-    capabilities = capabilities
-}
 
 -- Disable syntax highlighting with treesitter for perl. It doesn't work well
 lvim.builtin.treesitter.highlight.disable = { 'perl' }
