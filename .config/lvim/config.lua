@@ -16,7 +16,8 @@ lvim.plugins = {
             vim.cmd 'highlight default link gitblame SpecialComment'
         end
     },
-    { "git@gitlab.com:gitlab-org/editor-extensions/gitlab.vim.git" }
+    --{ "git@gitlab.com:gitlab-org/editor-extensions/gitlab.vim.git" },
+    { "stevearc/aerial.nvim" }
 }
 
 lvim.colorscheme = "solarized"
@@ -33,3 +34,6 @@ vim.opt.lazyredraw = true
 
 -- Disable syntax highlighting with treesitter for perl. It doesn't work well
 lvim.builtin.treesitter.highlight.disable = { 'perl' }
+lvim.keys.normal_mode["<leader>a"] = '<cmd>AerialToggle!<CR>'
+
+require('aerial').setup()
