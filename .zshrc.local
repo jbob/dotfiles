@@ -7,6 +7,8 @@ source ~/perl5/perlbrew/etc/bashrc
 export BAT_THEME="gruvbox-dark"
 export BAT_STYLE="full"
 
+source /usr/share/oh-my-zsh/zshrc
+
 source /usr/share/fzf/key-bindings.zsh
 source /usr/share/fzf/completion.zsh
 export FZF_DEFAULT_OPTS="--height 90% --preview 'bat {} --color=always'"
@@ -19,11 +21,12 @@ export FZF_DEFAULT_OPTS="--height 90% --preview 'bat {} --color=always'"
 #export POWERLEVEL9K_TIME_FORMAT="%D{%H:%M:%S | %d.%m.%y}"
 #export POWERLEVEL9K_PROMPT_ADD_NEWLINE=true
 #export ZSH_THEME="powerlevel10k/powerlevel10k"
+
+typeset -A ZSH_HIGHLIGHT_STYLES
+ZSH_HIGHLIGHT_STYLES[comment]='fg=yellow,bold'
 source /usr/share/zsh-theme-powerlevel10k/powerlevel10k.zsh-theme
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
-
-source /usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 
 alias ls=lsd
 alias vi=lvim
@@ -31,3 +34,5 @@ alias vim=lvim
 unalias lsd 2>/dev/null
 export PATH=$HOME/.local/bin:$PATH
 export PERL5LIB=$HOME/work/git/efs-lib/lib/
+
+source /usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
