@@ -29,8 +29,8 @@ source /usr/share/zsh-theme-powerlevel10k/powerlevel10k.zsh-theme
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
 
 alias ls=lsd
-alias vi=lvim
-alias vim=lvim
+alias vi=nvim
+alias vim=nvim
 unalias lsd 2>/dev/null
 export PATH=$HOME/.local/bin:$PATH
 export PERL5LIB=$HOME/work/git/efs-lib/lib/
